@@ -1,10 +1,11 @@
-#Installation
-This is a group of addons so just removing the -master isn't enough. 
-Unzip Bagnon-master.zip to your desktop or another folder,
-open that folder and select all the folders inside it,
-Cut and paster those into your /interface/addons/ folder.
-
-Bagnon is a group of addons that improve the way the player manages his or her inventory.
+## Installation  
+This is a group of addons so just removing the -master isn't enough.   
+Unzip Bagnon-master.zip to your desktop or another folder,  
+open that folder and select all the folders inside it,  
+Cut and paster those into your /interface/addons/ folder.  
+Done!  
+  
+### Bagnon is a group of addons that improve the way the player manages his or her inventory.
     
 Addons:  
 Bagnon - Displays your inventory in a single frame.  
