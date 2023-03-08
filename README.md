@@ -1,4 +1,4 @@
-# Bagnon is a group of addons that improve the way the player manages his or her inventory.
+Bagnon is a group of addons that improve the way the player manages his or her inventory.
 
 Addons:
 Bagnon - Displays your inventory in a single frame.
