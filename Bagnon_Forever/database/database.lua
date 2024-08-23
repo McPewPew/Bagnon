@@ -52,7 +52,6 @@ function BagnonDB.GetPlayers(sort)
 	end
 end
 
-
 --[[ 
 	BagnonDB.GetBags(player)	
 		returns:
