@@ -30,8 +30,26 @@ local currentRealm = GetRealmName(); --what currentRealm we're on
 			for playerName, data in BagnonDB.GetPlayers()
 --]]
 
-function BagnonDB.GetPlayers()
-	return pairs(BagnonForeverData[currentRealm])
+function BagnonDB.GetPlayers(sort)
+	if not sort then
+		-- If sort is false, just return pairs
+		return pairs(BagnonForeverData[currentRealm])
+	end
+
+	-- If sort is true, create a sorted list of keys
+	local sortedNames = {}
+	for name in pairs(BagnonForeverData[currentRealm]) do
+		table.insert(sortedNames, name)
+	end
+	table.sort(sortedNames)
+
+	-- Return a custom iterator function
+	local i = 0
+	return function()
+		i = i + 1
+		local playerName = sortedNames[i]
+		return playerName, BagnonForeverData[currentRealm][playerName]
+	end
 end
 
 --[[ 
