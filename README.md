@@ -1,5 +1,5 @@
 ## Installation  
-This is a group of addons so just removing the -master isn't enough.   
+This is a group of addons, so just removing the -master isn't enough.   
 Unzip Bagnon-master.zip to your desktop or another folder,  
 open that folder and select all the folders inside it,  
 Cut and paste those into your /interface/addons/ folder.  
