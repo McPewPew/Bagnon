@@ -55,6 +55,10 @@ function Bagnon_ToggleBags()
 	BagnonFrame_TrimToSize(Bagnon);
 end
 
+function Bagnon_ViewBank()
+	BagnonFrame_Toggle("Banknon")
+end
+
 --[[ Bag Overrides ]]--
 
 function Bagnon_AddBagHooks()

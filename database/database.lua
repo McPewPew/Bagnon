@@ -11,12 +11,20 @@ if BagnonDB then
 	error("Already using " .. (BagnonDB.addon or "another addon") .. " to view cached data.");
 	return;
 else
-	BagnonDB = {addon = "Bagnon_Forever"};
+	BagnonDB = {addon = "Bagnon"};
 end
 
 --local globals
 local currentPlayer = UnitName("player"); --the name of the current player that's logged on
 local currentRealm = GetRealmName(); --what currentRealm we're on
+
+if not BagnonForeverData then
+	BagnonForeverData = {}
+end
+
+if not BagnonForeverData[currentRealm] then
+	BagnonForeverData[currentRealm] = {}
+end
 
 --[[ 
 	Access  Functions 

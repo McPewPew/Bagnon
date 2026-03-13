@@ -99,4 +99,59 @@ if ( GetLocale() == "zhCN" ) then
 	--sixth return for GetItemInfo(id)
 	BAGNON_SUBTYPE_SOULBAG = "灵魂袋"
 	BAGNON_SUBTYPE_BAG = "袋"
+
+--[[
+	Bagnon Forever Localization file
+		This provides a way to translate Bagnon_Forever into different languages.
+--]]
+
+	--[[ Slash Commands ]]--
+
+	BAGNON_FOREVER_COMMAND_DELETE_CHARACTER = "delete"
+
+	--[[ Messages from the slash commands ]]--
+
+	--/bgn help
+	BAGNON_FOREVER_HELP_DELETE_CHARACTER = "/bgn " .. BAGNON_FOREVER_COMMAND_DELETE_CHARACTER ..
+		" <角色> <服务器> - 删除该角色的背包和银行数据。";
+
+	--/bgn delete <character> <realm>
+	BAGNON_FOREVER_CHARACTER_DELETED = "删除%s(%s)的背包数据。";
+
+	--[[ System Messages ]]--
+
+	--Bagnon Forever version update
+	BAGNON_FOREVER_UPDATED = "Bagnon Forever 数据更新至 v" .. BAGNON_FOREVER_VERSION .. "。";
+
+	--[[ Tooltips ]]--
+
+	--Title tooltip
+	--BAGNON_TITLE_FOREVERTOOLTIP = "<双击>切换角色";
+	BAGNON_FOREVER_HAS = "有";
+	BAGNON_FOREVER_BAGS = "件(背包中)";
+	BAGNON_FOREVER_BANK = "件(银行中)";
+
+	--Total gold on realm
+	BAGNON_FOREVER_MONEY_ON_REALM = "%s服务器上的总资产";
+
+--[[
+	Bagnon Main Options Localization file
+--]]
+
+	--General Options Menu
+	BAGNON_MAINOPTIONS_TITLE = "Bagnon 设置";
+	BAGNON_MAINOPTIONS_SHOW = "显示";
+
+	BAGNON_MAINOPTIONS_SHOW_BANK = "在银行时";
+	BAGNON_MAINOPTIONS_SHOW_VENDOR = "与商贩对话时";
+	BAGNON_MAINOPTIONS_SHOW_AH = "在拍卖行时";
+	BAGNON_MAINOPTIONS_SHOW_MAILBOX = "打开邮箱时";
+	BAGNON_MAINOPTIONS_SHOW_TRADING = "交易时";
+	BAGNON_MAINOPTIONS_SHOW_CRAFTING = "制作物品时";
+
+	BAGNON_MAINOPTIONS_SHOW_TOOLTIPS = "显示提示";
+	BAGNON_MAINOPTIONS_SHOW_FOREVERTOOLTIPS = "显示详细信息";
+	BAGNON_MAINOPTIONS_SHOW_BORDERS = "显示物品质量框";
+	return;
 end
+

@@ -50,7 +50,7 @@ function BagnonFrame_Load(frame, bags, title)
 		BagnonSets[frameName].bg = {r = 0, g = 0, b = 0, a = 1}
 	end
 
-	local bgSets= BagnonSets[frameName].bg
+	local bgSets = BagnonSets[frameName].bg
 	frame:SetBackdropColor(bgSets.r, bgSets.g, bgSets.b, bgSets.a)
 	frame:SetBackdropBorderColor(1, 1, 1, bgSets.a)
 
@@ -67,10 +67,11 @@ function BagnonFrame_Load(frame, bags, title)
 
 	frame:SetClampedToScreen(BagnonSets[frameName].stayOnScreen)
 
+	frame.defaultBags = bags
+
 	--load any settings needed if we have cached data
 	if BagnonDB then
 		frame.player = UnitName("player")
-		frame.defaultBags = bags
 
 		local dropdownButton = CreateFrame("Button", frameName .. "DropDown", frame, "BagnonDBUIDropDownButton")
 		dropdownButton:SetAlpha(frame:GetAlpha())
@@ -81,7 +82,7 @@ function BagnonFrame_Load(frame, bags, title)
 
 	--set the frame's title
 	frame.title = title
-	getglobal(frameName .. "Title"):SetText( format(frame.title, UnitName("player") ) )
+	getglobal(frameName .. "Title"):SetText(format(frame.title, UnitName("player")))
 	frame:RegisterForClicks("LeftButtonDown", "LeftButtonUp", "RightButtonUp")
 
 	--create the frame
@@ -97,24 +98,32 @@ end
 function BagnonFrame_Generate(frame)
 	frame.size = 0
 	local frameName = frame:GetName()
+	local frameSets = BagnonSets[frameName]
+	local bags
 
-	--generate a cached frame
-	if Bagnon_IsCachedFrame(frame) then
-		MoneyFrame_Update(frameName .. "MoneyFrame", BagnonDB.GetMoney(frame.player))
-
-		for _, bagID in pairs(frame.defaultBags) do
-			BagnonFrame_AddBag(frame, bagID)
-		end
-	--generate a normal frame
-	else
-		MoneyFrame_Update(frameName .. "MoneyFrame", GetMoney())
-
-		for _, bagID in pairs(BagnonSets[frameName].bags) do
-			BagnonFrame_AddBag(frame, bagID)
-		end
+	if not frameSets then
+		return
 	end
 
-	BagnonFrame_Layout(frame, BagnonSets[frame:GetName()].cols, BagnonSets[frame:GetName()].space)
+	-- cached frames use their default bag list
+	if Bagnon_IsCachedFrame(frame) then
+		bags = frame.defaultBags or frameSets.bags
+		MoneyFrame_Update(frameName .. "MoneyFrame", BagnonDB.GetMoney(frame.player))
+	-- normal frames use the current saved bag list
+	else
+		bags = frameSets.bags
+		MoneyFrame_Update(frameName .. "MoneyFrame", GetMoney())
+	end
+
+	if not bags then
+		return
+	end
+
+	for _, bagID in pairs(bags) do
+		BagnonFrame_AddBag(frame, bagID)
+	end
+
+	BagnonFrame_Layout(frame, frameSets.cols, frameSets.space)
 	frame:Show()
 end
 
@@ -342,19 +351,20 @@ end
 
 function BagnonFrame_Open(frameName, automatic)
 	local frame = getglobal(frameName)
-	if frame then
-		BagnonFrame_Generate(frame)
-	else
-		LoadAddOn(frameName)
+	if not frame then
+		return
 	end
-	if frame and not automatic then
+
+	BagnonFrame_Generate(frame)
+
+	if not automatic then
 		frame.manOpened = 1
 	end
 end
 
 function BagnonFrame_Close(frameName, automatic)
 	local frame = getglobal(frameName)
-	if  frame then
+	if frame then
 		if not(automatic and frame.manOpened) then
 			frame:Hide()
 			frame.manOpened = nil
@@ -364,14 +374,14 @@ end
 
 function BagnonFrame_Toggle(frameName)
 	local frame = getglobal(frameName)
-	if frame then
-		if frame:IsVisible() then
-			BagnonFrame_Close(frameName)
-		else
-			BagnonFrame_Open(frameName)
-		end
+	if not frame then
+		return
+	end
+
+	if frame:IsVisible() then
+		BagnonFrame_Close(frameName)
 	else
-		LoadAddOn(frameName)
+		BagnonFrame_Open(frameName)
 	end
 end
 
@@ -416,21 +426,21 @@ function BagnonFrame_ToggleBag(frame, bagID)
 
 	local frameName = frame:GetName()
 
-	--add bag
+	-- add bag
 	if not Bagnon_FrameHasBag(frameName, bagID) then
 		table.insert(BagnonSets[frameName].bags, bagID)
-	--remove bag
+	-- remove bag
 	else
-		for index in BagnonSets[frameName].bags do
-			if BagnonSets[frameName].bags[index] and BagnonSets[frameName].bags[index] == bagID then
-				table.remove(BagnonSets[frame:GetName()].bags, index)
+		for index, id in ipairs(BagnonSets[frameName].bags) do
+			if id == bagID then
+				table.remove(BagnonSets[frameName].bags, index)
+				break
 			end
 		end
 	end
 
 	BagnonFrame_OrderBags(frame, BagnonSets[frameName].reverse)
 
-	--update frame
 	if frame:IsShown() then
 		BagnonFrame_Generate(frame)
 	end

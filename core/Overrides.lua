@@ -12,7 +12,7 @@ local function BagIsControlledByBagnon(id)
 end
 
 local function BagIsControlledByBanknon(id)
-	return BagnonSets.showBankAtBank and Bagnon_IsAddOnEnabled("Banknon") and Bagnon_FrameHasBag("Banknon", id)
+	return BagnonSets.showBankAtBank and Bagnon_FrameHasBag("Banknon", id)
 end
 
 local bToggleBag = ToggleBag

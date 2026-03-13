@@ -1,5 +1,5 @@
 function BagnonOptions_OnLoad()
-	if not IsAddOnLoaded("Bagnon_Forever") then
+	if not BagnonDB then
 		local frameName = this:GetName()
 		this:SetWidth(this:GetWidth() - 24)
 

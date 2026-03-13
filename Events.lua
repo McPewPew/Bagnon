@@ -19,7 +19,7 @@ local function ShouldUpdateBag(frame, bag)
 end
 
 local function OpenIF(frameName, condition)
-	if condition then
+	if condition and getglobal(frameName) then
 		BagnonFrame_Open(frameName, 1)
 		return true
 	end
@@ -49,7 +49,7 @@ end
 --[[ Variable Loading ]]--
 
 local function LoadVariables()
-	local currentVersion = GetAddOnMetadata("Bagnon_Core", "Version")
+	local currentVersion = GetAddOnMetadata("Bagnon", "Version")
 	if not BagnonSets then
 		BagnonSets = {
 			showBagsAtBank = 1,
@@ -218,7 +218,7 @@ local function OnEvent()
 	elseif event == "MERCHANT_CLOSED" then
 		CloseIF("Banknon", BagnonSets.showBankAtVendor)
 	--Loading event
-	elseif event == "ADDON_LOADED" and arg1 == "Bagnon_Core" then
+	elseif event == "ADDON_LOADED" and arg1 == "Bagnon" then
 		this:UnregisterEvent("ADDON_LOADED")
 		Load(this)
 	end

@@ -154,7 +154,7 @@
 				
 				<Anchors>
 					<Anchor point="BOTTOMLEFT">
-						<Offset x="10" y="0"/>
+						<Offset x="28" y="0"/>
 					</Anchor>
 				</Anchors>
 				<Scripts>
@@ -166,6 +166,41 @@
 				<ButtonText setAllPoints="true"/>
 				<NormalFont font="GameFontNormal" justifyH="LEFT"/>
 				<HighlightFont font="GameFontHighlight" justifyH="LEFT"/>
+			</Button>
+			<Button name="$parentOpenBank" parent="Bagnon">	
+				<Size x="13" y="13"/>
+			
+				<Anchors>
+					<Anchor point="RIGHT" relativeTo="$parentShowBags" relativePoint="LEFT">
+						<Offset x="-4" y="1"/>
+					</Anchor>
+				</Anchors>
+			
+				<NormalTexture file="Interface\AddOns\Bagnon\bank.blp" setAllPoints="true"/>
+				<PushedTexture file="Interface\AddOns\Bagnon\bank.blp" setAllPoints="true"/>
+				<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD" setAllPoints="true"/>
+			
+				<Scripts>
+					<OnLoad>
+						this:RegisterForClicks("LeftButtonUp")
+					</OnLoad>
+			
+					<OnClick>
+						Bagnon_ViewBank()
+					</OnClick>
+			
+					<OnEnter>
+						if BagnonSets.showTooltips then
+							GameTooltip:SetOwner(this, "ANCHOR_RIGHT")
+							GameTooltip:SetText("View Bank")
+							GameTooltip:Show()
+						end
+					</OnEnter>
+			
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
 			</Button>
 		</Frames>
 		

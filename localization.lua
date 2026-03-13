@@ -97,3 +97,53 @@ BAGNON_ITEMTYPE_QUIVER = "Quiver"
 --sixth return for GetItemInfo(id)
 BAGNON_SUBTYPE_SOULBAG = "Soul Bag"
 BAGNON_SUBTYPE_BAG = "Bag"
+
+--[[
+	Bagnon Main Options Localization file
+--]]
+
+--General Options Menu
+BAGNON_MAINOPTIONS_SHOW_BANK = "At Bank";
+BAGNON_MAINOPTIONS_SHOW_VENDOR = "At Vendor";
+BAGNON_MAINOPTIONS_SHOW_AH = "At Auction House";
+BAGNON_MAINOPTIONS_SHOW_MAILBOX = "At Mailbox";
+BAGNON_MAINOPTIONS_SHOW_TRADING = "When Trading";
+BAGNON_MAINOPTIONS_SHOW_CRAFTING = "When Crafting";
+
+BAGNON_MAINOPTIONS_SHOW_TOOLTIPS = "Show Tooltips";
+BAGNON_MAINOPTIONS_SHOW_FOREVERTOOLTIPS = "Show Detailed Tooltips";
+BAGNON_MAINOPTIONS_SHOW_BORDERS = "Show Item Quality Borders";
+
+--[[
+	Bagnon Forever Localization file
+		This provides a way to translate Bagnon_Forever into different languages.
+--]]
+
+BAGNON_FOREVER_VERSION = "6.6.30"
+
+--[[ Slash Commands ]]--
+
+BAGNON_FOREVER_COMMAND_DELETE_CHARACTER = "delete"
+
+--[[ Messages from the slash commands ]]--
+
+--/bgn help
+BAGNON_FOREVER_HELP_DELETE_CHARACTER = "/bgn " .. BAGNON_FOREVER_COMMAND_DELETE_CHARACTER ..
+	" <character> <realm> - Removes the given character's inventory and bank data."
+
+--/bgn delete <character> <realm>
+BAGNON_FOREVER_CHARACTER_DELETED = "Removed inventory data about %s of %s."
+
+--[[ System Messages ]]--
+
+--Bagnon Forever version update
+BAGNON_FOREVER_UPDATED = "Bagnon Forever data updated to v" .. BAGNON_FOREVER_VERSION .. "."
+
+BAGNON_FOREVER_HAS = "has"
+BAGNON_FOREVER_BAGS = "(Bags)"
+BAGNON_FOREVER_BANK = "(Bank)"
+
+--[[ Tooltips ]]--
+
+--Total gold on realm
+BAGNON_FOREVER_MONEY_ON_REALM = "Total On %s"

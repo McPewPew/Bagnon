@@ -42,7 +42,7 @@ function Banknon_OnEvent(event)
 			Banknon_UpdatePurchaseButtonVis()
 		end
 	elseif event == "ADDON_LOADED" then
-		if arg1 == "Banknon" then
+		if arg1 == "Bagnon" then
 			this:UnregisterEvent("ADDON_LOADED")
 			Banknon_Load(this)
 		end

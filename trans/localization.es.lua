@@ -1,0 +1,151 @@
+﻿--[[
+	Bagnon Localization file
+
+	TODO:
+		Add some frame strings and other things
+		I could probably Babelfish the translation, but most likely it would insult someone's
+			mother or something.
+--]]
+
+--[[
+	Spanish  by   Ferroginus
+--]]
+
+if ( GetLocale() == "esES" ) then
+
+	--[[ Keybindings ]]--
+	
+	BINDING_HEADER_BAGNON = "Bagnon"
+	BINDING_NAME_BAGNON_TOGGLE = "Activar Bagnon"
+	BINDING_NAME_BANKNON_TOGGLE = "Activar Banknon"
+	
+	--[[ Slash Commands ]]--
+	
+	BAGNON_COMMAND_HELP = "help"
+	BAGNON_COMMAND_SHOWBAGS = "bags"
+	BAGNON_COMMAND_SHOWBANK = "bank"
+	BAGNON_COMMAND_REVERSE = "reverse"
+	BAGNON_COMMAND_OVERRIDE_BANK = "overridebank"
+	BAGNON_COMMAND_TOGGLE_TOOLTIPS = "tooltips"
+	BAGNON_COMMAND_DEBUG_ON = "debug"
+	BAGNON_COMMAND_DEBUG_OFF = "nodebug"
+	
+	--[[ Messages from the slash commands ]]--
+	
+	--/bgn help
+	BAGNON_HELP_TITLE = "Bagnon commands:"
+	BAGNON_HELP_SHOWBAGS = "/bgn " .. BAGNON_COMMAND_SHOWBAGS .. " - Muestra/Oculta Bagnon."
+	BAGNON_HELP_SHOWBANK = "/bgn " .. BAGNON_COMMAND_SHOWBANK .. " - Muestra/Oculta Banknon."
+	BAGNON_HELP_HELP = "/bgn " .. BAGNON_COMMAND_HELP .. " - Mostrar commandos."
+	
+	--/bgn debug
+	BAGNON_DEBUG_ENABLED = "Modo depuración activo."
+	
+	--/bgn nodebug
+	BAGNON_DEBUG_DISABLED = "Modo depuración inactivo."
+	
+	--[[ System Messages ]]--
+	
+	BAGNON_INITIALIZED = "Bagnon inicializado. Teclee /bagnon o /bgn para los comandos"
+	BAGNON_UPDATED = "Opciones de Bagnon actualizadas a v%s. Teclee /bagnon o /bgn para los comandos"
+	
+	--[[ UI Text ]]--
+	
+	--Titles
+	
+	--These should probably read Inventory of <player> and Bank of <player> in other versions I guess
+	BAGNON_INVENTORY_TITLE = "Inventario de %s"
+	BAGNON_BANK_TITLE = "Banco de %s"
+	
+	--Bag Button
+	BAGNON_SHOWBAGS = "Mostrar Bolsas"
+	BAGNON_HIDEBAGS = "Ocultar Bolsas"
+	
+	--General Options Menu
+	BAGNON_MAINOPTIONS_TITLE = "Opciones de Bagnon"
+	BAGNON_MAINOPTIONS_SHOW = "Mostrar"
+	
+	--Right Click Menu
+	BAGNON_OPTIONS_TITLE = "Opciones de %s"
+	BAGNON_OPTIONS_LOCK = "Bloquear posición"
+	BAGNON_OPTIONS_BACKGROUND = "Fondo"
+	BAGNON_OPTIONS_REVERSE = "Ordenar las bolsas inversamente"
+	BAGNON_OPTIONS_COLUMNS = "Columnas"
+	BAGNON_OPTIONS_SPACING = "Espaciado"
+	BAGNON_OPTIONS_SCALE = "Escala"
+	BAGNON_OPTIONS_OPACITY = "Opacidad"
+	BAGNON_OPTIONS_STRATA = "Capa"
+	BAGNON_OPTIONS_STAY_ON_SCREEN = "Permanecer en pantalla"
+	
+	--[[ Tooltips ]]--
+	
+	--Title tooltip
+	BAGNON_TITLE_TOOLTIP = "<Botón DER> para menú de opciones."
+	
+	--Bag Tooltips
+	BAGNON_BAGS_HIDE = "<Mayusculas + Botón IZQ> para esconder."
+	BAGNON_BAGS_SHOW = "<Mayusculas + Botón IZQ> para mostrar."
+	
+	BAGNON_SPOT_TOOLTIP = "<Doble-Click> para buscar."
+	
+	--[[ Other ]]--
+	
+	--fifth return for GetItemInfo(id)
+	BAGNON_ITEMTYPE_CONTAINER = "Contenedor"
+	BAGNON_ITEMTYPE_QUIVER = "Carcaj"
+	
+	--sixth return for GetItemInfo(id)
+	BAGNON_SUBTYPE_SOULBAG = "Bolsa de Gemas"
+	BAGNON_SUBTYPE_BAG = "Bolsa"
+	
+	--[[
+		Bagnon Forever Localization file
+			This provides a way to translate Bagnon_Forever into different languages.
+	--]]
+
+	--[[ Slash Commands ]]--
+
+	BAGNON_FOREVER_COMMAND_DELETE_CHARACTER = "delete"
+
+	--[[ Messages from the slash commands ]]--
+
+	--/bgn help
+	BAGNON_FOREVER_HELP_DELETE_CHARACTER = "/bgn " .. BAGNON_FOREVER_COMMAND_DELETE_CHARACTER .. 
+		" <character> <realm> - Elimina los datos del inventario y del banco del personaje .";
+
+	--/bgn delete <character> <realm>
+	BAGNON_FOREVER_CHARACTER_DELETED = "Elimina los datos de %s de %s.";
+
+	--[[ System Messages ]]--
+
+	--Bagnon Forever version update
+	BAGNON_FOREVER_UPDATED = "Opciones de Bagnon Forever actualizadas a v" .. BAGNON_FOREVER_VERSION .. ".";
+
+	--[[ Tooltips ]]--
+
+	--Title tooltip
+	--BAGNON_TITLE_FOREVERTOOLTIP = "<Doble-Click> para cambiar de personaje.";
+
+	--Total gold on realm
+	BAGNON_FOREVER_MONEY_ON_REALM = "Dinero total de %s";
+
+--[[
+	Bagnon Main Options Localization file
+--]]
+	--General Options Menu
+	BAGNON_MAINOPTIONS_TITLE = "Opciones de Bagnon";
+	BAGNON_MAINOPTIONS_SHOW = "Mostrar";
+
+	BAGNON_MAINOPTIONS_SHOW_BANK = "En el Banco";
+	BAGNON_MAINOPTIONS_SHOW_VENDOR = "En los Vendedores";
+	BAGNON_MAINOPTIONS_SHOW_AH = "En Casa de Subastas";
+	BAGNON_MAINOPTIONS_SHOW_MAILBOX = "En el Correo";
+	BAGNON_MAINOPTIONS_SHOW_TRADING = "Comerciando";
+	BAGNON_MAINOPTIONS_SHOW_CRAFTING = "Fabricando";
+
+	BAGNON_MAINOPTIONS_SHOW_TOOLTIPS = "Mostrar ayudas";
+	BAGNON_MAINOPTIONS_SHOW_FOREVERTOOLTIPS = "Mostrar ayuda detallada";
+	BAGNON_MAINOPTIONS_SHOW_BORDERS = "Resaltar calidad de objetos";
+	
+	return;
+end

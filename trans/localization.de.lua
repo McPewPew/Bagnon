@@ -83,5 +83,18 @@ if ( GetLocale() == "deDE" ) then
 	BAGNON_ITEMTYPE_QUIVER = "K\195\182cher";
 	BAGNON_SUBTYPE_SOULBAG = "Seelentasche";
 	BAGNON_SUBTYPE_BAG = "Beh\195\164lter";
+
+--[[
+	Bagnon Forever Localization file
+		This provides a way to translate Bagnon_Forever into different languages.
+--]]
+
+	--BAGNON_TITLE_FOREVERTOOLTIP = "<Doppel-Klick> um Charakter zu wechseln.";
+
+--[[
+	Bagnon Main Options Localization file
+--]]
+
+	BAGNON_MAINOPTIONS_SHOW = "Zeige";
 	return;
 end

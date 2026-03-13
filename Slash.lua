@@ -9,20 +9,17 @@ function BagnonSlash_DisplayHelp()
 	BagnonMsg(BAGNON_HELP_SHOWBAGS);
 	BagnonMsg(BAGNON_HELP_SHOWBANK);
 	
-	if( IsAddOnLoaded("Bagnon_Forever") ) then
-		BagnonMsg(BAGNON_FOREVER_HELP_DELETE_CHARACTER);
+	if BagnonDB then
+		BagnonMsg(BAGNON_FOREVER_HELP_DELETE_CHARACTER)
 	end
 end
 
 SlashCmdList["BagnonCOMMAND"] = function(msg)
 	if(not msg or msg == "") then
-		if( Bagnon_IsAddOnEnabled("Bagnon_Options") ) then
-			if(not IsAddOnLoaded("Bagnon_Options") ) then
-				LoadAddOn("Bagnon_Options");
-			end
-			BagnonOptions:Show();
+		if BagnonOptions then
+			BagnonOptions:Show()
 		else
-			BagnonSlash_DisplayHelp();
+			BagnonSlash_DisplayHelp()
 		end
 	else
 		local args = {};
@@ -44,7 +41,7 @@ SlashCmdList["BagnonCOMMAND"] = function(msg)
 		elseif(cmd == BAGNON_COMMAND_DEBUG_OFF) then
 			BagnonSets.noDebug = 1;
 			BagnonMsg(BAGNON_DEBUG_DISABLED);
-		elseif(cmd == BAGNON_FOREVER_COMMAND_DELETE_CHARACTER and IsAddOnLoaded("Bagnon_Forever") ) then
+		elseif(cmd == BAGNON_FOREVER_COMMAND_DELETE_CHARACTER and BagnonDB) then
 			BagnonForever_RemovePlayer(args[2], args[3] or GetRealmName());
 		end
 	end
