@@ -10,10 +10,8 @@ Ammo and Soul Bag item slots are colored yellow
 Profession bag slots are colored green  
 Keyring slots are colored orange  
 The borders for items are color coded based by their quality  
-View bank from anywhere (requires Bagnon_Forever)  
-View other characters' inventory/bank (requires Bagnon_Forever)  
-Dynamically Loaded - Bagnon and Banknon only load when needed.  
-Modular Design - Can pick and choose which functionality is wanted.  
+View bank from anywhere
+View other characters' inventory/bank 
   
 Usage
   
@@ -30,7 +28,7 @@ Shift-Click a bag within the frame to toggle the visibility of the items contain
 Customizing:  
 Right click on the title portion of Bagnon or Banknon. A menu will pop up with a bunch of ptions for modifying the appearance of the frame.  
   
-Viewing other character's data (requires Bagnon_Forever):  
+Viewing other character's data:
 Click on the arrow button by Bagnon/Banknon's title. A menu will pop up giving a list of characters Bagnon knows about. Click on one and Bagnon will display the contents of that character's inventory/bank.  
   
 Searching:  
