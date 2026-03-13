@@ -1,6 +1,8 @@
 This version of Bagnon has been modified to work with Turtle WoW's Launcher,<br/>
 A small bank icon has been added to the bag frame, clicking this shows the cached bank frame.
-  
+<br/>
+The previous multi-folder version is available here - https://github.com/McPewPew/Bagnon/tree/previous-version<br/>
+<br/>
 Features:  
 A single, customizable display for your inventory and one for your bank  
 Colorcoded item slots and borders:  
