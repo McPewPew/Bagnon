@@ -1,18 +1,5 @@
-## Installation  
-This is a group of addons, so just removing the -master isn't enough.   
-Unzip Bagnon-master.zip to your desktop or another folder,  
-open that folder and select all the folders inside it,  
-Cut and paste those into your /interface/addons/ folder.  
-Done!  
-  
-### Bagnon is a group of addons that improve the way the player manages his or her inventory.
-    
-Addons:  
-Bagnon - Displays your inventory in a single frame.  
-Banknon - Displays your bank in a single frame.  
-Bagnon_Core - Required for Bagnon and Banknon, the core files for the frames.  
-Bagnon_Options - A load on demand options menu for Bagnon.  
-Bagnon_Forever - Optional, Lets you view your bank from anywhere or the inventory/bank of your other characters.  
+This version of Bagnon has been modified to work with Turtle WoW's Launcher,<br/>
+A small bank icon has been added to the bag frame, clicking this shows the cached bank frame.
   
 Features:  
 A single, customizable display for your inventory and one for your bank  
@@ -35,12 +22,6 @@ Commands can start with either /bagnon or /bgn.
 /bgn bank - Toggle the display of Banknon.  
 /bgn delete <player> <realm> - Removes inventory data about the given player from Bagnon_Forever. Not specifying a realm will revert to the current realm.  
   
-Showing Bagnon/Banknon:  
-When enabled, Bagnon and Banknon should be fully intergrated into the UI. It is also possible to view the frames via the keybindings that can be set or the slash commands.  
-
-Moving Frames Around:   
-When unlocked, simply click and drag on the title portion of the frame (<Player's> Bank|Inventory).  
-
 Hiding Specific Bags:  
 Shift-Click a bag within the frame to toggle the visibility of the items contained within that bag.  
   
