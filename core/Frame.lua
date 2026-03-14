@@ -124,7 +124,7 @@ function BagnonFrame_Generate(frame)
 	end
 
 	BagnonFrame_Layout(frame, frameSets.cols, frameSets.space)
-	frame:Show()
+	--frame:Show()
 end
 
 --[[
@@ -356,7 +356,8 @@ function BagnonFrame_Open(frameName, automatic)
 	end
 
 	BagnonFrame_Generate(frame)
-
+	frame:Show()
+	
 	if not automatic then
 		frame.manOpened = 1
 	end
